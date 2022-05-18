@@ -1,37 +1,70 @@
 # cloud-aws
 ## Cloud Foundation
-- Greenfield Accounts
-- Brownfield Accounts
+- AWS Well Architected Framework (What tools are we going to use to achieve it)
+  - Security
+  - Reliability
+  - Operational Excellence
+  - Performance Efficiency
+  - Cost Optimization
+  - Sustainability
 - Landing Zone
   - AWS Organizations
+      - Design
+      - Master billing Account
+      - Greenfield Accounts
+      - Brownfield Accounts
+      - Account Naming Convention
   - AWS Control Tower Factory for Terraform
-    - Master billing Account
     - Security Account
     - Log archive Account
     - AWS regions supported
     - Enabling Cloud Trail audit
-    - AWS Customizations
-  - SSO Integration
+    - Control Tower Customizations
+      - Networking
+        - Delete default VPC
+        - Creating VPCs and Subnets
+      - Service Control Policies
+        - Deny access to AWS based on the requested AWS Region
+        - Prevent IAM users and roles from making certain changes
+        - Prevent IAM users and roles from making specified changes, with an exception for a specified admin role
+        - Require MFA to perform an API action
+        - Block service access for the root user
+        - Prevent member accounts from leaving the organization
+        - Prevent users from disabling CloudWatch or altering its configuration
+        - Prevent users from disabling AWS Config or changing its rules
+        - Prevent users from disabling GuardDuty or modifying its configuration
+        - Require a tag on specified created resources
+        - Prevent users from deleting Amazon VPC flow logs
+        - Prevent any VPC that doesn't already have internet access from getting it
+        - Restrict Public S3 buckets creation
+      - Cross Account IAM Roles
+      - IAM Federated Roles
+      - SSO Integration
 ## Networking
 - VPC
-  - No. of VPC's in AWS account
+  - Number of VPC per account
+  - VPC Peering
+  - Routing
+  - Transit Gateway
+  - Direct connect
+  - NACL
+  - VPC Flowlogs
 - Subnets
   - Design
     - Red subnets
     - Yellow subnets
     - Container subnets
     - Green subnets
-- Routing
-- Transit Gateway
-- Direct connect
 ## Security
 - Cloud Custodian
 - AWS GuardDuty
 - SCP Policies
 - IAM Roles
-  - Cross Account Roles
-  - Service Link Roles
-  - IAM Users
+  - Creating Service Link Roles
+  - Creating IAM Users
+    - When should we create IAM Users
+    - IAM Users naming convention
+    - Safeguard Access and Secret Key
 ## Infrastructure As Code
 - Terraform
   - Why terragrunt?
