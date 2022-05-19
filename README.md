@@ -9,21 +9,23 @@
   - Sustainability
 - Landing Zone
   - AWS Organizations
-      - Design
-      - Master billing Account
-      - Greenfield Accounts
-      - Brownfield Accounts
-      - Account Naming Convention
+      - Accounts Design and Structure
+        - Account Naming Convention
+        - Master billing Account
+        - Greenfield Accounts
+          - Shared Services
+          - Security Account
+          - Log archive Account
+        - Brownfield Accounts
   - AWS Control Tower Factory for Terraform
-    - Security Account
-    - Log archive Account
+    - Vending Multi-AWS Accounts
     - AWS regions supported
     - Enabling Cloud Trail audit
     - Control Tower Customizations
       - Networking
         - Delete default VPC
         - Creating VPCs and Subnets
-      - Service Control Policies
+      - Service Control Policies (Examples below)
         - Deny access to AWS based on the requested AWS Region
         - Prevent IAM users and roles from making certain changes
         - Prevent IAM users and roles from making specified changes, with an exception for a specified admin role
@@ -40,6 +42,7 @@
       - Cross Account IAM Roles
       - IAM Federated Roles
       - SSO Integration
+      - Onboarding applications and requesting access to accounts
 ## Networking
 - VPC
   - Number of VPC per account
@@ -56,7 +59,6 @@
     - Container subnets
     - Green subnets
 ## Security
-- Cloud Custodian
 - AWS GuardDuty
 - SCP Policies
 - IAM Roles
@@ -65,30 +67,54 @@
     - When should we create IAM Users
     - IAM Users naming convention
     - Safeguard Access and Secret Key
+- KMS Keys
+- Certificate Management
 ## Infrastructure As Code
+- Design
+  - Tools used for provisioning
+  - Self Serve Provisioning
+  - Infrastructure Governance
+    - Open Policy Agent
+    - SNOW Tickets
+    - Approvals and RBAC
+    - Integrations with other team (Infosec)
+  - Drift Detection and avoidance
 - Terraform
   - Why terragrunt?
-  - Provisioning
+  - Terraform Modules
+    - Productizing Modules
+    - User data Management using Ansible
+    - Versioning Modules 
+    - Modules Collections
+  - IaC Provisioning
     - Git branching
-    - Infrastructure Governance
+    - Terraform Stages
     - State file management
-    - User data management
-  - LCM management using terraform
-  - Avoid Drift
-## Services
-- EC2
-  - Spot instances
-  - Reserved Instances
-  - On-Demand Instances
-- S3
-  - Bucket Encryption
-- RDS
+    - Lock Management
+    - IAM Roles
+  - Life Cycle Management
+- AWS CloudFormation
+  - Productizing CFT's
+    - Service Catalog Framework
+      - Portfolio
+      - Products
+      - Drift Detection
+      - Updating Products 
+    - IAM roles for Provisioning 
+    - CFN_NAG 
 ## AMI Engineering
-- AMI Build Process
-  - Implementing Packer
-  - Integrating Ansible with Packer
-  - Updating Parameter store with AMI ID
-  - Sharing AMI ID's to Multiple Accounts
+- AMI Build Process 
+  - Tools used to build AMI
+  - EC2 Image Builder
+  - Packer
+    - Implementing Packer
+    - Integrating Ansible with Packer
+    - Updating Parameter store with AMI ID
+    - Sharing AMI ID's to Multiple Accounts
+  - AMI Rollout
+    - Current AMI Info
+    - Previous AMI Info
+    - Updating ASG with latest AMI Info
 - Server Hardening - CIS Commandments
   - ARM Platform
     - RedHat
@@ -107,21 +133,48 @@
     - EKS Optimized
     - ECS Optimized
   - Supported Marketplace AMI's
-- AMI Rollout
-  - Current AMI Info
-  - Previous AMI Info
-  - Updating ASG with latest AMI Info
 ## Kubernetes
 ## Cloud Governance
+- Cloud Custodian
+- Encryption
+  - Data at rest
+  - In flight 
+- Disaster Recovery
+- Data Replication
+- Backup
+  - Backups Retention
+  - Tag Based backup
+  - EC2 Snapshots
+  - RDS Backups
 ## FinOps
+- Finops Dashboard
 - AWS Cost Management
-- CUR Reports
-- Tagging
-## Cloud Operations
-### Backup
-- EC2 Snapshots
-- RDS Backups
-### Monitoring
-### Automations
-## Cloud Migration
+  - Cost and Budget reporting
+  - CUR Reports
+- Tag Compliance Policies
+- Cost Optimization
+  - Shutdown and startup of Ec2 based on tags
+  - Monitor under-utilized servers
+## Monitoring
+- Tools used for Monitoring
+  - AWS Cloudwatch
+  - Dynatrace
+  - Splunk
+## Automations
+- Tools used for Automations
+- Configuration Management
+  - Why Ansible?
+  - Getting access to Ansible AWX
+  - Ansible AWX Administration
+    - Organizing Projects and templates
+    - RBAC Controls in AWX
+    - Inventory Management
+      - Tag based inventory management
+    - Configuration as Code for AWX
+    - SSO Integration
+    - SNOW Integration
+    - Creating Workflow Jobs
+  - Playbooks in version control
+  - Role Based structure
+
 
