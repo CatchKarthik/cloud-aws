@@ -58,17 +58,24 @@
     - Yellow subnets
     - Container subnets
     - Green subnets
+## DNS
+- Route53
+  - Hosted Zones
+  - Centralized Route53 Management
+  - Updating and managing Route53 records
 ## Security
 - AWS GuardDuty
 - SCP Policies
-- IAM Roles
+- IAM Roles and policies 
   - Creating Service Link Roles
   - Creating IAM Users
     - When should we create IAM Users
     - IAM Users naming convention
     - Safeguard Access and Secret Key
+  - IAM Roles - Quarterly Cleanup
 - KMS Keys
 - Certificate Management
+- Secrets Management
 ## Infrastructure As Code
 - Design
   - Tools used for provisioning
@@ -155,13 +162,18 @@
 - Cost Optimization
   - Shutdown and startup of Ec2 based on tags
   - Monitor under-utilized servers
+  - Reserved Instances
+  - RightSizing Recommendations
 ## Monitoring
 - Tools used for Monitoring
   - AWS Cloudwatch
   - Dynatrace
   - Splunk
+  - ELK
+- Alert Management
 ## Automations
 - Tools used for Automations
+- Lambda
 - Configuration Management
   - Why Ansible?
   - Getting access to Ansible AWX
